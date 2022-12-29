@@ -1,0 +1,49 @@
+.navbar-custom {
+    background-color: #fc4c02;
+    padding: 5px 20px;
+}
+
+.logo1 {
+    height: 100px;
+    width: 120px;
+    border-radius: 20%;
+}
+
+#navbarNav {
+    border: dashed 2px #fd9467;
+    flex-grow: 0;
+}
+
+.nav-item {
+    padding: 3px 13px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+    font-size: 19px;
+}
+
+.navbar-light .navbar-toggler {
+    border: 1px solid white;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.cartIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.numOfItems {
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
+}
