@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo1 from "../../images/home/Logo-2-orange.png";
-import cart from "../../images/home/cart.svg";
+import CartWidget from "../main/Cart/CartWidget/CartWidget.js";
 
 const NavBar = () => {
   return (
@@ -24,19 +24,16 @@ const NavBar = () => {
             <Link to={`/products`} className="nav-item">
               Products
             </Link>
-            <Link to={`/category/jewelery`} className="nav-item">
-              Jewelery
+            <Link to={`/products/accessories`} className="nav-item">
+              Accessories
             </Link>
-            <Link to={`/category/electronics`} className="nav-item">
-              Electronics
+            <Link to={`/products/coffee`} className="nav-item">
+              Coffee
             </Link>
             <Link className="nav-item" href="#contact">
               Contact
             </Link>
-            <Link className="nav-item" href="#cart">
-              <img className="cartIcon" src={cart} alt="cart" />
-              <span className="numOfItems">3</span>
-            </Link>
+            <CartWidget />
           </Nav>
         </Navbar.Collapse>
       </Container>

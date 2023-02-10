@@ -3,7 +3,7 @@ import NavBar from "./components/navbar/NavBar.js";
 import Home from "./components/main/Home/Home.js";
 import ProductsContainer from "./components/main/Products/ProductsContainer.js";
 import ProductDetail from "./components/main/Products/ProductDetail/ProductDetail.js";
-import CategoryContainer from "./components/main/Products/ProductCategory/CategoryContainer.js";
+import CartContainer from "./components/main/Cart/CartContainer/CartContainer.js";
 import Footer from "./components/footer/Footer.js";
 import "./App.scss";
 
@@ -17,7 +17,12 @@ const App = () => {
           <Route exact path="/" element={<Home greeting="Hello world!!!!" />} />
           <Route exact path="/products" element={<ProductsContainer />} />
           <Route exact path="/product/:productId" element={<ProductDetail />} />
-          <Route exact path="/category/:categoryId" element={<CategoryContainer />} />
+          <Route
+            exact
+            path="/products/:productCategory"
+            element={<ProductsContainer />}
+          />
+          <Route exact path="/cart" element={<CartContainer />} />
         </Routes>
 
         <Footer />
