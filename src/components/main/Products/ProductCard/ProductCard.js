@@ -8,13 +8,13 @@ const ProductCard = ({ props }) => {
 
   return (
     <Card key={id} className="cardClassname">
-      <Card.Img variant="top" src={image} />
+      <Card.Img variant="top" src={image} className="image-style"/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{shortDescription}</Card.Text>
         <Card.Text>{`Price: US$ ${price}`}</Card.Text>
         <Link to={`/product/${id}`}>
-          <Button variant="primary">Check details</Button>
+          <Button variant="outline-warning">Check details</Button>
         </Link>
       </Card.Body>
     </Card>

@@ -1,4 +1,5 @@
 import "./ProductDetail.scss";
+import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
@@ -41,6 +42,18 @@ const ProductDetail = () => {
     }
   };
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const addCart = () => {
     if (count !== 0) {
       addItem({
@@ -48,9 +61,13 @@ const ProductDetail = () => {
         title: productInfo.title,
         price: productInfo.price,
         quantity: count,
+        totalPrice: count * productInfo.price,
       });
     } else {
-      alert("Don't forget to specify the quantity");
+      Toast.fire({
+        icon: "error",
+        title: "Don't forget to specify the quantity",
+      });
     }
   };
 

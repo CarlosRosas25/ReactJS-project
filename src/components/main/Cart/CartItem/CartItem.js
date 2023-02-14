@@ -6,14 +6,12 @@ import bin from "../../../../images/cart/bin.png";
 const CartItem = ({ product }) => {
   const { deleteItem } = useContext(CartContext);
 
-  const subtotal = product.price * product.quantity;
-
   return (
     <div className="itemContainer">
       <div>{product.title}</div>
       <div>{product.price}</div>
       <div>{product.quantity}</div>
-      <div>{subtotal}</div>
+      <div>{product.totalPrice}</div>
       <div>
         <img src={bin} onClick={() => deleteItem(product.id)} alt="trash can" />
       </div>

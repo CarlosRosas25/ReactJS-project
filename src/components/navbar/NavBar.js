@@ -3,6 +3,7 @@ import "./NavBar.scss";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import logo1 from "../../images/home/Logo-2-orange.png";
 import CartWidget from "../main/Cart/CartWidget/CartWidget.js";
 
@@ -11,7 +12,7 @@ const NavBar = () => {
     <Navbar className="header sticky-top" expand="lg">
       <Container>
         <Link to={`/`}>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <img src={logo1} className="logo1" alt="logo" />
           </Navbar.Brand>
         </Link>
@@ -21,19 +22,34 @@ const NavBar = () => {
             <Link to={`/`} className="nav-item">
               Home
             </Link>
-            <Link to={`/products`} className="nav-item">
-              Products
-            </Link>
-            <Link to={`/products/accessories`} className="nav-item">
-              Accessories
-            </Link>
-            <Link to={`/products/coffee`} className="nav-item">
-              Coffee
-            </Link>
-            <Link className="nav-item" href="#contact">
+            <NavDropdown title="Products" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <Link to={`/products`} className="categories">
+                  All
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to={`/products/coffeemaker`} className="categories">
+                  Coffee Maker
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to={`/products/accessories`} className="categories">
+                  Accessories
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to={`/products/coffee`} className="categories">
+                  Coffee
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Link to={`/contact`} className="nav-item">
               Contact
             </Link>
-            <CartWidget />
+            <Link to={`/cart`} className="nav-item">
+              <CartWidget />
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

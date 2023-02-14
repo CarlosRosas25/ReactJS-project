@@ -5,6 +5,7 @@ import ProductsContainer from "./components/main/Products/ProductsContainer.js";
 import ProductDetail from "./components/main/Products/ProductDetail/ProductDetail.js";
 import CartContainer from "./components/main/Cart/CartContainer/CartContainer.js";
 import Footer from "./components/footer/Footer.js";
+import Contact from "./components/main/Contact/Contact.js";
 import "./App.scss";
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
         <NavBar />
 
         <Routes>
-          <Route exact path="/" element={<Home greeting="Hello world!!!!" />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<ProductsContainer />} />
           <Route exact path="/product/:productId" element={<ProductDetail />} />
           <Route
@@ -22,6 +23,7 @@ const App = () => {
             path="/products/:productCategory"
             element={<ProductsContainer />}
           />
+          <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/cart" element={<CartContainer />} />
         </Routes>
 
